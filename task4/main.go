@@ -11,6 +11,9 @@ func main() {
 
 	taskChannel := make(chan int, 5)
 
+	// The difference is taskChannel now can hold 5 integers before being consumed.
+	// taskChannel will be blocked if it has more than 5 integers
+
 	wg.Add(2)
 
 	go produce(taskChannel, &wg)
